@@ -19,6 +19,10 @@ To write a shell. This project is about creating own bash and learning a lot abo
   - exit
 ### ***Run:***
 ```
+$> make readline
+```
+>To install GNU Readline. GNU Readline is a software library that provides line-editing and history capabilities for interactive programs with a command-line interface, such as Bash. The function readline () prints a prompt and then reads and returns a single line of text from the user.
+```
 $> make
 $> ./minishell
 ~/minishell$
