@@ -1,5 +1,5 @@
 # Minishell
-### ***The aim of the project is:***
+### The aim of the project is:
 To write a shell. This project is about creating own bash and learning a lot about processes and file descriptors. Shell should:
 - Handle ’ (single quote).
 - Handle " (double quote).
@@ -17,7 +17,7 @@ To write a shell. This project is about creating own bash and learning a lot abo
   - unset
   - env
   - exit
-### ***Run:***
+### Run:
 ```
 $> make readline
 ```
@@ -27,4 +27,4 @@ $> make
 $> ./minishell
 ~/minishell$
 ```
-### Have fun with that beautiful minishell and enjoy it!
+### Have fun with that beautiful minishell and enjoy it !
