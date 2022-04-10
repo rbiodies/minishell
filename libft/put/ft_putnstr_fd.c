@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_putnstr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 11:07:13 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/01/17 11:25:43 by rbiodies         ###   ########.fr       */
+/*   Created: 2021/12/14 17:37:53 by rbiodies          #+#    #+#             */
+/*   Updated: 2022/02/25 15:44:39 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
-char	*ft_strndup(const char *s1, int n)
+void	ft_putnstr_fd(char *str, int n, int fd)
 {
-	int		i;
-	char	*buffer;
+	int	i;
 
-	i = -1;
+	i = 0;
 	if (n < 0)
 	{
-		buffer = (char *)malloc(ft_strlen(s1) + 1 + n);
-		if (buffer == NULL)
-			return (0);
-		while (s1[++i] && i < (int)ft_strlen(s1) + n)
-			buffer[i] = s1[i];
+		while (str[i] && i < (int)ft_strlen(str) + n)
+		{
+			ft_putchar_fd(str[i], fd);
+			i++;
+		}
 	}
 	else
 	{
-		buffer = (char *)malloc(n + 1);
-		if (buffer == NULL)
-			return (0);
-		while (s1[++i] && i < n)
-			buffer[i] = s1[i];
-	}
-	buffer[i] = '\0';
-	return (buffer);
+		while (str[i] && i < n)
+		{
+			ft_putchar_fd(str[i], fd);
+			i++;
+		}
+	}		
 }

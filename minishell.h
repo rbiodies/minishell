@@ -6,7 +6,7 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:32:23 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/02/24 20:16:24 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/04/10 11:13:11 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,9 @@ void	fill_39(int *j, char **s, char **new);
 void	fill_numb(char **new, char *numb, int *j, char **s);
 int		fill_var(int *j, char **s, char **new);
 int		fill_34(int *j, char **s, char **new, t_his *history);
+/*****ft_lstadd_back*****/
+void	ft_lstadd_back(t_list **lst, t_list *new);
+/*****ft_lstfree*****/
+void	ft_lstfree(t_list **list);
 
 #endif

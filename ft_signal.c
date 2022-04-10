@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bjeana <bjeana@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:43:56 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/02/24 14:03:52 by bjeana           ###   ########.fr       */
+/*   Updated: 2022/04/10 11:02:03 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_proc_signal_handler(int signum)
 void	ft_free(t_his **history)
 {
 	ft_hisclear(history);
-	ft_strfree(g_envp);
+	ft_arrfree(g_envp);
 }
 
 // user pressed ctrl-D

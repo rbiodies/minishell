@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnstr_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 17:37:53 by rbiodies          #+#    #+#             */
-/*   Updated: 2021/12/14 17:56:57 by rbiodies         ###   ########.fr       */
+/*   Created: 2021/10/17 11:59:47 by rbiodies          #+#    #+#             */
+/*   Updated: 2022/04/10 11:15:00 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "minishell.h"
 
-void	ft_putnstr_fd(char *str, int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*last;
 
-	i = 0;
-	if (n < 0)
+	last = *lst;
+	if (!*lst)
 	{
-		while (str[i] && i < (int)ft_strlen(str) + n)
-		{
-			ft_putchar_fd(str[i], fd);
-			i++;
-		}
+		*lst = new;
+		return ;
 	}
-	else
-	{
-		while (str[i] && i < n)
-		{
-			ft_putchar_fd(str[i], fd);
-			i++;
-		}
-	}		
+	while (last->next != 0)
+		last = last->next;
+	last->next = new;
+	new->prev = last;
 }

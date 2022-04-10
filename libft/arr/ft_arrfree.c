@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrlen.c                                        :+:      :+:    :+:   */
+/*   ft_arrfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 16:07:42 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/01/27 13:31:49 by rbiodies         ###   ########.fr       */
+/*   Created: 2021/12/13 14:20:32 by rbiodies          #+#    #+#             */
+/*   Updated: 2022/02/25 15:45:24 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
-int	ft_arrlen(char **arr)
+void	ft_arrfree(char **arr)
 {
 	int	i;
 
+	if (!arr)
+		return ;
 	i = 0;
-	while (arr[i] != NULL)
+	while (arr[i])
+	{
+		free(arr[i]);
 		i++;
-	return (i);
+	}
+	free(arr);
+	arr = NULL;
 }

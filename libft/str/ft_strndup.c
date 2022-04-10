@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 13:24:44 by rbiodies          #+#    #+#             */
-/*   Updated: 2021/11/19 13:37:25 by rbiodies         ###   ########.fr       */
+/*   Created: 2022/01/17 11:07:13 by rbiodies          #+#    #+#             */
+/*   Updated: 2022/02/25 15:44:51 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strndup(const char *s1, int n)
 {
-	int	i;
+	int		i;
+	char	*buffer;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+	i = -1;
+	if (n < 0)
+	{
+		buffer = (char *)malloc(ft_strlen(s1) + 1 + n);
+		if (buffer == NULL)
+			return (0);
+		while (s1[++i] && i < (int)ft_strlen(s1) + n)
+			buffer[i] = s1[i];
+	}
+	else
+	{
+		buffer = (char *)malloc(n + 1);
+		if (buffer == NULL)
+			return (0);
+		while (s1[++i] && i < n)
+			buffer[i] = s1[i];
+	}
+	buffer[i] = '\0';
+	return (buffer);
 }

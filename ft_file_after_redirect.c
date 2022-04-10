@@ -6,7 +6,7 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 12:21:37 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/02/24 13:39:14 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/04/10 11:02:13 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_cmd_after_file_and_redirect(t_list *temp, t_list *temp2)
 {
 	int	i;
 
-	ft_strfree(temp->tokens);
+	ft_arrfree(temp->tokens);
 	temp->tokens = (char **)malloc(sizeof(char *) * ft_arrlen(temp2->tokens));
 	i = 1;
 	while (temp2->tokens[i])

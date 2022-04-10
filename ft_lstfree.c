@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 13:24:44 by rbiodies          #+#    #+#             */
-/*   Updated: 2021/11/19 13:37:25 by rbiodies         ###   ########.fr       */
+/*   Created: 2022/01/15 19:27:02 by rbiodies          #+#    #+#             */
+/*   Updated: 2022/04/10 11:14:51 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_lstfree(t_list **list)
 {
-	int	i;
+	t_list	*element;
+	t_list	*temp;
+	int		i;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		i++;
-	return (s1[i] - s2[i]);
+	element = *list;
+	while (element)
+	{
+		temp = element->next;
+		i = 0;
+		while (element->tokens[i])
+		{
+			free(element->tokens[i]);
+			i++;
+		}
+		free(element->argv);
+		free(element->tokens);
+		free(element->cmd_with_path);
+		free(element);
+		element = temp;
+	}
+	*list = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 13:51:56 by bjeana            #+#    #+#             */
-/*   Updated: 2022/02/22 10:09:17 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/04/10 11:02:30 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	**error(char **arr)
 {
 	if (arr != NULL)
-		ft_strfree(arr);
+		ft_arrfree(arr);
 	return (NULL);
 }
 
@@ -77,7 +77,7 @@ int	ft_unset(char **token)
 				if (ft_strcmp_exp(g_envp[j], token[i]) == 0)
 				{
 					g_envp = ft_delete_str(token[i]);
-					ft_strfree(temp);
+					ft_arrfree(temp);
 					if (g_envp == NULL)
 						return (-1);
 					break ;

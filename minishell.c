@@ -6,7 +6,7 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 13:49:09 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/02/24 11:50:04 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/04/10 11:01:45 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_check_shlvl(void)
 	free(number);
 	if (!g_envp[i])
 	{
-		ft_strfree(g_envp);
+		ft_arrfree(g_envp);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -56,7 +56,7 @@ static void	ft_init_env(int argc, char **argv, char **envp)
 		g_envp[i] = ft_strdup(envp[i]);
 		if (!g_envp[i])
 		{
-			ft_strfree(g_envp);
+			ft_arrfree(g_envp);
 			exit(EXIT_FAILURE);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 12:55:20 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/02/24 16:49:48 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/04/10 11:02:20 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ int	ft_get_path(t_list *temp, t_his **history)
 		= ft_strjoin_divider(paths_cmd[i], temp->tokens[0], '/');
 		if (access(temp->cmd_with_path, F_OK) == 0)
 		{
-			ft_strfree(paths_cmd);
+			ft_arrfree(paths_cmd);
 			return (1);
 		}
 		free(temp->cmd_with_path);
 		temp->cmd_with_path = NULL;
 	}
 	ft_add_history_error(history);
-	ft_strfree(paths_cmd);
+	ft_arrfree(paths_cmd);
 	return (0);
 }

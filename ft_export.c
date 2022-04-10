@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_export.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bjeana <bjeana@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 20:34:29 by bjeana            #+#    #+#             */
-/*   Updated: 2022/02/23 18:51:48 by bjeana           ###   ########.fr       */
+/*   Updated: 2022/04/10 11:03:22 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int	ft_just_export(void)
 			i++;
 	}
 	ft_putarr_export(c_envp);
-	ft_strfree(c_envp);
+	ft_arrfree(c_envp);
 	return (1);
 }
 
@@ -96,7 +96,7 @@ static int	ft_export_args(int m, char *token)
 		g_envp = remake_envp(token, 0);
 	else if (m == 0)
 		g_envp = remake_envp(token, 1);
-	ft_strfree(temp);
+	ft_arrfree(temp);
 	if (g_envp == NULL)
 		return (-1);
 	return (1);

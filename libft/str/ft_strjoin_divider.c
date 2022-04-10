@@ -6,11 +6,11 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:40:24 by rbiodies          #+#    #+#             */
-/*   Updated: 2021/12/11 16:16:17 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:44:45 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
 static int	ft_len(char const *s)
 {

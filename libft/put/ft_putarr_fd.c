@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putarr.c                                        :+:      :+:    :+:   */
+/*   ft_putarr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bjeana <bjeana@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:22:57 by bjeana            #+#    #+#             */
-/*   Updated: 2022/01/22 15:23:11 by bjeana           ###   ########.fr       */
+/*   Updated: 2022/02/25 15:46:18 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
-void	ft_putarr(char **arr)
+void	ft_putarr_fd(char **arr, int fd)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ void	ft_putarr(char **arr)
 		return ;
 	while (arr[i] != NULL)
 	{
-		ft_putendl_fd(arr[i], 1);
+		ft_putendl_fd(arr[i], fd);
 		i++;
 	}
 }

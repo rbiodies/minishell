@@ -6,11 +6,11 @@
 /*   By: rbiodies <rbiodies@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:08:16 by rbiodies          #+#    #+#             */
-/*   Updated: 2022/01/15 10:26:01 by rbiodies         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:44:53 by rbiodies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
 char	*ft_strreplace(char *str, char *replace_what, char *replace_by)
 {
