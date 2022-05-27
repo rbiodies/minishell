@@ -1,6 +1,6 @@
 # Minishell
 ### The aim of the project:
-- To write a shell (own bash);
+- To write a <img height="20" width="20" src="https://unpkg.com/simple-icons@v6/icons/shell.svg" /> shell (own <img height="20" width="20" src="https://unpkg.com/simple-icons@v6/icons/gnubash.svg" /> bash);
 - To learn a lot about processes and file descriptors.
 ### Shell should:
 - Handle ’ (single quote).
