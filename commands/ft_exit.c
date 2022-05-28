@@ -19,7 +19,7 @@ static int	ft_check_digits(t_list *temp)
 	i = 0;
 	if (temp->tokens[1] \
 	&& (temp->tokens[1][i] == '-' || temp->tokens[1][i] == '+'))
-			i++;
+		i++;
 	while (temp->tokens[1] && temp->tokens[1][i] != '\0')
 	{
 		if (temp->tokens[1][i] < '0' || temp->tokens[1][i] > '9')

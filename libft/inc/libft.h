@@ -19,15 +19,17 @@
 
 typedef struct s_list
 {
-    char            *argv;
-    char            **tokens;
-    struct s_list   *prev;
-    struct s_list   *next;
-    int             type;
-    char            *cmd_with_path;
-    int             fd[2];
-    int             size;
-}    t_list;
+	char			*argv;
+	char			**tokens;
+	struct s_list	*prev;
+	struct s_list	*next;
+	int				type;
+	char			*cmd_with_path;
+	int				fd[2];
+	int				size;
+}	t_list;
+
+# define BUFFER_SIZE	1024
 
 /*****arr*****/
 void	ft_arrfree(char **arr);
@@ -41,6 +43,9 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+/*****gnl*****/
+int		get_next_line(int fd, char **line);
 
 /*****math*****/
 int		ft_atoi(const char *str);

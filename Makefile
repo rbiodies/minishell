@@ -5,12 +5,10 @@ LIB_PATH	=	libft/
 
 LIB			=	${LIB_PATH}libft.a
 
-SRCS		=	${wildcard *.c}
+SRCS		=	${wildcard main/*.c parser/*.c dollar/*.c executor/*.c commands/*.c run/*.c}
 
-HEADER		=	minishell.h
-OBJDIR		=	objects
-
-OBJS		=	${SRCS:%.c=${OBJDIR}/%.o}
+HEADER		=	-I include/
+OBJS		=	${SRCS:%.c=%.o}
 
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
@@ -28,21 +26,21 @@ subsystem	:
 				@printf "\033[0;33m🍀 File '${LIB}' is done ! ✅\033[0m\n"
 
 ${NAME}		:	${OBJS_LIB} ${OBJS}
-				@${CC} ${CFLAGS} -I${HEADER} ${READLINE} ${OBJS} ${LIB} -o ${NAME}
+				@${CC} ${CFLAGS} ${HEADER} ${READLINE} ${OBJS} ${LIB} -o ${NAME}
 				@printf "\033[0;32m💬 File '${NAME}' is created !  ✅\033[0m\n"
 
 ${OBJDIR}	:
 				@mkdir -p ${OBJDIR}
 
-${OBJDIR}/%.o: %.c | ${OBJDIR}
-				@${CC} ${CFLAGS} -I${HEADER} -I/Users/${USER}/.brew/Cellar/readline/8.1.1/include -c $< -o $@
+%.o			:	%.c
+				@${CC} ${CFLAGS} ${HEADER} -I/Users/${USER}/.brew/Cellar/readline/8.1.1/include -c $< -o $@
 
 readline	:
 				brew install readline
 
 clean		:	
 				@make -C ${LIB_PATH} clean
-				@${RM} ${OBJDIR}
+				@${RM} ${OBJS}
 				@printf "\033[0;34m👻 Files '${OBJS}' are deleted ! 🗑️\033[0m\n"
 
 fclean		:	clean

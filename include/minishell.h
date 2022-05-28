@@ -15,7 +15,7 @@
 
 /*****LIBRARIES*****/
 
-# include "libft/inc/libft.h"
+# include "../libft/inc/libft.h"
 # include <stdio.h>				//	printf()
 # include <fcntl.h>				//	O_RDONLY
 # include <sys/stat.h>			//	struct stat	f, lstat(), st_mode, S_IFDIR
@@ -46,8 +46,6 @@ typedef struct s_his
 # define TYPE_OR		10	//	||
 # define TYPE_AND		11	//	&&
 
-# define BUFFER_SIZE	1024
-
 /*****GLOBAL_VARIABLE*****/
 
 char	**g_envp;
@@ -55,8 +53,6 @@ char	**g_envp;
 /*****FUNCTIONS*****/
 
 /*****minishell*****/
-int		ft_arrlen(char **arr);
-void	ft_strfree(char **arr);
 void	ft_signal(void);
 int		ft_add_history(char *line, t_his **history);
 void	ft_input_eof(char **line, t_his	**history);
@@ -74,8 +70,6 @@ char	**ft_split_minishell(char *s, char c);
 /*****ft_split_minishell*****/
 int		count_letter(char *s, char c, int i);
 char	*handler_quote(char *s, char c);
-/*****get_next_line*****/
-void	*ft_realloc(void *buffer, size_t new_size);
 /*****ft_lexer_quotes*****/
 char	*ft_check_quotes(char *s);
 /*****ft_executor*****/
@@ -90,7 +84,6 @@ void	ft_lstfree(t_list **list);
 /*****ft_redirect*****/
 int		ft_file_after_redirect(t_list *temp);
 /*****ft_file_after_redirect*****/
-int		get_next_line(int fd, char **line);
 void	ft_run(t_list *temp, t_his **history);
 /*****ft_our_cmd*****/
 int		ft_echo(t_list *temp);
@@ -106,15 +99,9 @@ int		valid_export2(char *str);
 char	**error(char **arr);
 void	add_quote(char **str);
 void	ft_putarr_export(char **str);
-void	ft_putarr(char **arr);
 int		quotes_handler(char **token);
 int		quotes_handler2(char **token, int one, int two);
-/*****ft_two_args*****/
-char	*ft_strreplace(char *str, char *replace_what, char *replace_by);
-/*****new_libft/ft_strreplace*****/
-char	*ft_strjoinch(char *str, char ch);
 /*****ft_get_path*****/
-char	*ft_strjoin_divider(char const *s1, char const *s2, char divider);
 int		ft_run_cmd(t_list *temp, t_his **history);
 /*****ft_run_cmd*****/
 void	ft_proc_signal_handler(int signum);
