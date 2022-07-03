@@ -18,8 +18,6 @@ static char	*ft_getenv(char *key)
 {
 	int		i;
 	char	*tmp;
-	char	*pwd;
-	char	buff[4096 + 1];
 	char	*old_new_pwd;
 
 	i = -1;
@@ -29,7 +27,6 @@ static char	*ft_getenv(char *key)
 		if (ft_strncmp(tmp, g_envp[i], ft_strlen(tmp)) == 0)
 		{
 			free(tmp);
-			pwd = getcwd(buff, 4096);
 			old_new_pwd = ft_strchr(g_envp[i], '=') + 1;
 			if (ft_strcmp(old_new_pwd, "") == 0)
 			{

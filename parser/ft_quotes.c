@@ -44,10 +44,8 @@ static int	count_quotes(char *str)
 static void	fill_str(char *str, int j, int len, char **s)
 {
 	int	i;
-	int	odd;
 
 	i = -1;
-	odd = 0;
 	while (j < len)
 	{
 		if (str[++i] == 34)
@@ -74,10 +72,8 @@ static char	*delete_quotes(char *str, int count)
 {
 	char	*s;
 	int		j;
-	int		i;
 	int		len;
 
-	i = 0;
 	j = -1;
 	len = ft_strlen(str) - count;
 	s = (char *)malloc(sizeof(char) * (len + 1));
