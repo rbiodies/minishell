@@ -29,4 +29,4 @@ $> make
 $> ./minishell
 ~/minishell$
 ```
-### Have fun with that beautiful minishell and enjoy it !
+### <h1 align="center">Have fun with that beautiful minishell and enjoy it !</h1>
